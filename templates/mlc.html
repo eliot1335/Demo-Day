@@ -29,7 +29,7 @@
             <div class="row">
                 <!-- gotta play around with the bootstrap -->
                 <div class="col-md-12 text-left">
-                    <img src="Images/screenshot_Eliot.jpg" alt="screenshot of IMDB page">
+                    <img src="{{ url_for('static', filename='img/screenshot_Eliot.jpg') }}" alt="screenshot of IMDB page">
                     <p>This had made plotting visualizations super difficult for me.</p>
                     <br>
                 </div>
@@ -43,11 +43,11 @@
             </div>
             <div class="row">
                 <div class="col-md-6 text-left">
-                    <img src="Images/genre_count_bar_Eliot.jpg" alt="test">
+                    <img src="{{ url_for('static', filename='img/genre_count_bar_Eliot.jpg') }}" alt="test">
                     <p>There are 21 tags in genre.</p>
                 </div>
                 <div class="col-md-6 text-left">
-                    <img src="Images/freq_word_bar_Eliot.jpg" alt="test">
+                    <img src="{{ url_for('static', filename='img/freq_word_bar_Eliot.jpg') }}" alt="test">
                     <p>This is a bar chart for the top 100 most frequent words in the bag of words.</p>
                     <p><br></p>
                 </div>
@@ -66,7 +66,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-left">
-                    <img src="Images/Sample_display_Eliot.jpg" alt="predictions">
+                    <img src="{{ url_for('static', filename='img/Sample_display_Eliot.jpg') }}" alt="predictions">
                     <p><br></p>
                 </div>
             </div>
@@ -78,10 +78,10 @@
                     <p><br></p>
                     <p>The challenge of this is that many classification studies focus on single-labeled classification. Therefore, even though the result of my prediction doesn't seem to be good, I had a hard time figuring out how to fit this multi-labeled data into other models and create good visualizations.</p>
                     <p><br>This is the classification report. The numbers aren't that great.</p>
-                    <img src="Images/classification_report_Eliot.jpg" alt="classification_report">
+                    <img src="{{ url_for('static', filename='img/classification_report_Eliot.jpg') }}" alt="classification_report">
                     <p><br></p>
                     <p>This is a confusion matrix plot for each of the 21 labels</p>
-                    <img src="Images/LR_MultiLabel_ConfusionMatrix_Eliot.jpg" alt="classification_report">
+                    <img src="{{ url_for('static', filename='img/LR_MultiLabel_ConfusionMatrix_Eliot.jpg') }}" alt="Multi-Label Confusion Matrix">
                 </div>
             </div>
             <div class="row">
