@@ -6,21 +6,21 @@
 {% block content %}
     <div class ="row">
         <div class="col-md-12 jumbotron text-center">
-            <h1>Welcome to Movie Visualizations</h1>
-            <p>Select one of the visualizations below</p>
+            <h1>Welcome to Movie Visualizations and Machine Learning</h1>
+            <p>Let's talk about movies! See what we can do with the data set!</p>
         </div>
     </div>
     <div class="box">
         <div class="container">
             <div class="row" style="padding-bottom: 30px;">
-                <div class="col">
+                <!-- <div class="col">
                     <a href="/maps"><img class="thumb" src="{{ url_for('static', filename='img/maps.png') }}"></a>
+                </div> -->
+                <div class="col">
+                    <a href="/scatter"><img class="thumb" src="{{ url_for('static', filename='img/eliot_thumb_test.jpg') }}"></a>
                 </div>
                 <div class="col">
-                    <a href="/scatter"><img class="thumb" src="{{ url_for('static', filename='img/scatter.png') }}"></a>
-                </div>
-                <div class="col">
-                    <a href="/wordcloud"><img class="thumb" src="{{ url_for('static', filename='img/cloud.png') }}"></a>
+                    <a href="/mlc"><img class="thumb" src="{{ url_for('static', filename='img/eliot_thumb.jpg') }}"></a>
                 </div>
             </div>
         </div>

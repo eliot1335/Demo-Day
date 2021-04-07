@@ -19,31 +19,10 @@ def index():
     return render_template("home.html")
 
 ###############################################################################################
-# maps route
-@app.route("/maps")
+# Multi-Label Classification route
+@app.route("/mlc")
 def maps():
-    return render_template("maps.html")
-
-# route for JSON object
-@app.route("/metadata/world_map")
-def mapping():
-
-    client = pymongo.MongoClient(conn)
-
-    db= client.movies_db
-    movies= db.movie_table
-
-    fields = {"title": True, "revenue": True, "productionCountries": True, "_id": False}
-
-    json_projects = movies.find({}, fields)
-
-    client.close()
-
-    json_projects = [project for project in json_projects]
-
-    print(type(json_projects))
-
-    return jsonify(json_projects)
+    return render_template("mlc.html")
 
 ###############################################################################################
 # scatter route
@@ -74,38 +53,6 @@ def scatter_plot():
     return jsonify(json_projects)
 
 ###############################################################################################
-# word cloud route
-@app.route("/wordcloud", methods=['POST', 'GET'])
-def wordcloud():
-
-    client = pymongo.MongoClient(conn)
-    db = client.movies_db
-    movies = db.movie_table
-
-    genre = "Music"
-    text_string = "All work and no play makes jack a dull boy."
-    if request.method == "POST":
-        genre = request.form['selGenre']
-        print("--------------------> Selected: " + genre)
-    query = {
-            "genres":
-                {
-                    "$regex": f'.*{genre}.*',
-                    "$options": "i" # case-insensitive
-                }
-            }
-    fields = {"keywords": True, "_id": False}
-    genre_match_count = movies.count_documents(query)
-    genre_match = movies.find(query, fields)
-    client.close()
-    print("--------------------> Count Match: " + str(genre_match_count) )
-    text_string = ""
-    for cursor in genre_match:
-        text_string += cursor.get("keywords") + ":"
-
-    rec = { "selGenre": genre, "text_string": text_string}
-
-    return render_template("cloud.html", rec=rec)
 
 if __name__ == "__main__":
     app.run(debug=True)
