@@ -19,29 +19,30 @@
             <div class="row">
                 <div class="col-md-12 text-left">
                     <h2>Multi-Label Classification</h2>
-                    <p><br></p>
-                    <p>My portion of the project is to build a model that takes the movie titles and descriptions as feature, and spit out the genre for that movie.</p>
-                    <p>The reason I am interested in doing this is that when I worked on project 2 with a similar movie dataset scrapped from IMDB, I had a hard time dealing with multiple genre tags given in the genre column. It same with no specific number of tags and no specific sequence between tags.</p>
+                    <hr class="solid">
+                    <p>My goal is to build a model that takes the movie titles and descriptions as a feature in a bag of words fashion, and generate a genre classification for that movie.</p>
+                    <p>The reason I am interested in doing this is that when I worked on my interactive scatter plot project with a similar movie dataset scrapped from IMDB, I had a difficult time dealing with multiple genre tags given in the genre column of the dataset. There were no specific number of tags or specific sequence between tags for each movie.</p>
                 </div>
+                <img src="{{ url_for('static', filename='img/screenshot_Eliot2.jpg') }}" alt="screenshot of IMDB page" width="650" height="200">
             </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
-                <!-- gotta play around with the bootstrap -->
                 <div class="col-md-12 text-left">
                     <img src="{{ url_for('static', filename='img/screenshot_Eliot.jpg') }}" alt="screenshot of IMDB page">
                     <p>This had made plotting visualizations super difficult for me.</p>
                     <br>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-left">
+                <div class="col-md-12 text-left">
+                    <p><br></p>
+                    <h2>Machine Learning</h2>
+                    <hr class="solid">
                     <p>In my model, I used TF-IDF function to vectorize my feature, which score each word based on how frequently it appear in the bag of words of movie titles and descriptions. </p>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-6 text-left">
                     <img src="{{ url_for('static', filename='img/genre_count_bar_Eliot.jpg') }}" alt="test">
                     <p>There are 21 tags in genre.</p>
@@ -52,30 +53,44 @@
                     <p><br></p>
                 </div>
             </div>
+            <!-- <div class="row">
+                <div class="col-md-6 text-left">
+                    <img src="{{ url_for('static', filename='img/genre_count_bar_Eliot.jpg') }}" alt="test">
+                    <p>There are 21 tags in genre.</p>
+                </div>
+                <div class="col-md-6 text-left">
+                    <img src="{{ url_for('static', filename='img/freq_word_bar_Eliot.jpg') }}" alt="test">
+                    <p>This is a bar chart for the top 100 most frequent words in the bag of words.</p>
+                    <p><br></p>
+                </div>
+            </div> -->
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-left">
-                    <h2>Logistic Regression</h2>
                     <p><br></p>
+                    <h2>Logistic Regression</h2>
+                    <hr class="solid">
                     <p>With the help of MultiLabelBinarizer(), I was able to assign these tags to outcome in arrays of array with binary information, and fit the data to a logistic regression model in a one vs. all fashion. This can be seen as the foundation of a serviceable movie recommendation system.</p>
                     <p>I adapted a function to sample the features and spit out the predicted genre and the actual genre of the movies.</p>
                 </div>
+                <img src="{{ url_for('static', filename='img/Sample_display_Eliot.jpg') }}" alt="predictions" width="500" height="400">    
             </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-md-6 text-left">
                     <img src="{{ url_for('static', filename='img/Sample_display_Eliot.jpg') }}" alt="predictions">
                     <p><br></p>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-left">
-                    <h2>Evaluations of The Predictions</h2>
                     <p><br></p>
+                    <h2>Evaluations of The Predictions</h2>
+                    <hr class="solid">
                     <p>The challenge of this is that many classification studies focus on single-labeled classification. Therefore, even though the result of my prediction doesn't seem to be good, I had a hard time figuring out how to fit this multi-labeled data into other models and create good visualizations.</p>
                     <p><br>This is the classification report. The numbers aren't that great.</p>
                     <img src="{{ url_for('static', filename='img/classification_report_Eliot.jpg') }}" alt="classification_report">
