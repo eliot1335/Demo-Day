@@ -107,7 +107,7 @@ function resetInit() {
             .html(function(d) {
             return (`<strong>${d.title}</strong><br><br>Genre: ${d.genres}
                     <br>Budget: ${formatter.format(d.budget)}
-                    <br>Revenue: ${formatter.format(d.budget)}`);
+                    <br>Revenue: ${formatter.format(d.revenue)}`);
             });
 
         chartGroup.call(toolTip);
